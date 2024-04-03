@@ -1,0 +1,21 @@
+#acho {
+    display: block;
+    margin: auto;
+}
+
+#dialog-box {
+    text-align: center;
+    font-size: medium;
+}
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#tabTitle{
+    font-size: larger;
+    font-weight: 700;
+}
