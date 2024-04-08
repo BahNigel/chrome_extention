@@ -1,21 +1,26 @@
 {
-    "manifest_version": 3,
-    "name": "Tab Title Viewer",
-    "version": "1.0",
-    "description": "A Chrome extension to display the title of the current tab.",
-    "permissions": ["activeTab"],
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "img/1.png",
-        "48": "img/1.png",
-        "128": "img/1.png"
-      }
-    },
-    "icons": {
+  "manifest_version": 3,
+  "name": "LinkedIn Data Extractor",
+  "version": "1.0",
+  "description": "A Chrome extension to extract data from LinkedIn profiles.",
+  "permissions": ["tabs", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/in/*"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
       "16": "img/1.png",
       "48": "img/1.png",
       "128": "img/1.png"
     }
+  },
+  "icons": {
+    "16": "img/1.png",
+    "48": "img/1.png",
+    "128": "img/1.png"
   }
-  
+}

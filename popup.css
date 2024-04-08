@@ -7,6 +7,10 @@
     text-align: center;
     font-size: medium;
 }
+#tabTitle{
+    font-size: larger;
+    font-weight: 700;
+}
 button {
     padding: 10px 20px;
     background-color: #007bff;
@@ -14,8 +18,5 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-#tabTitle{
-    font-size: larger;
-    font-weight: 700;
-}
+  }
+  
