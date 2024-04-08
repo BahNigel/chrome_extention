@@ -44,6 +44,37 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     };
 
     sendResponse(profileInfo); // Send the extracted profile information back to the background script
+  }else{
+    if (request.action === 'addFeeds') {
+      // Code to react to feeds (like and comment)
+      // Simulate liking on LinkedIn feed
+      var commentCountInput = request.commentCountInput
+      var likeCountInput = request.likeCountInput
+      console.log(commentCountInput)
+      console.log(likeCountInput)
+      alert(commentCountInput+' '+ likeCountInput)
+      document.querySelectorAll('button.react-button__trigger').forEach(function(button, index) {
+        if (index < likeCountInput) {
+          button.click(); // Simulate clicking the like button
+        }
+      });
+  
+      // Simulate commenting on LinkedIn feed
+      document.querySelectorAll('button.comment-button').forEach(function(button, index) {
+        if (index < commentCountInput) {
+          // Find the corresponding textarea and set the comment text
+          var textarea = button.closest('.comments-comment-box__form-container').querySelector('textarea.commentable-textarea');
+          if (textarea) {
+            textarea.value = "CFBR"; // Set the comment text
+            button.click(); // Simulate clicking the comment button
+          }
+        }
+      });
+  
+      // Send a response indicating that feeds have been processed
+      sendResponse('Feeds processed successfully');
+    }
+  
   }
 });
 
